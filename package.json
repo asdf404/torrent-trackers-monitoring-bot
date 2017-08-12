@@ -1,0 +1,42 @@
+{
+  "name": "torrent-trackers-monitoring-bot",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Torrent trackers monitoring bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --harmony",
+    "test:watch": "mocha --harmony --watch",
+    "start": "node --harmony ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:asdf404/torrent-trackers-monitoring-bot.git"
+  },
+  "authors": "Pavel Kilin <pavel@asdf404.net>",
+  "license": "WTFPL",
+  "homepage": "https://github.com/asdf404/torrent-trackers-monitoring-bot#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-mocha": "^4.9.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "sinon": "^2.2.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^4.0.0",
+    "iconv-lite": "^0.4.18",
+    "ioredis": "^2.5.0",
+    "ms": "^2.0.0",
+    "node-telegram-bot-api": "^0.27.1",
+    "ramda": "^0.23.0",
+    "request": "^2.81.0"
+  }
+}
