@@ -46,7 +46,9 @@ setInterval(async () => {
     if (!torrent) return
     console.log('cron:notify update', id)
     const subscribers = await torrents.subscribers({ torrent: id })
-    subscribers.forEach(user => notify(user.telegram, torrent))
+    for (let user of subscribers) {
+      await notify(user.telegram, torrent)
+    }
   } catch (e) {
     console.log('cron:notify error', e)
   }
