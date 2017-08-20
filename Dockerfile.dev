@@ -3,5 +3,4 @@ FROM node:8.2
 VOLUME /service
 WORKDIR /service
 
-EXPOSE 8080
 CMD ["node", "--harmony", "./index.js"]

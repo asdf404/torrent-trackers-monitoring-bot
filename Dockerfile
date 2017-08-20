@@ -5,5 +5,4 @@ ENV NODE_ENV production
 ADD . /service
 RUN npm install --production
 
-EXPOSE 8080
 CMD ["node", "--harmony", "./index.js"]
