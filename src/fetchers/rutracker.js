@@ -13,7 +13,11 @@ function fetch (id) {
       if (err) { return reject(err) }
       const $ = cheerio.load(iconv.decode(body, 'win1251'))
       const title = $('#topic-title').text()
-      const parsed = url.parse($('.magnet-link').attr('href'), true)
+      const link = $('.magnet-link').attr('href')
+      if (!title || !link) {
+        return reject(new Error('Tracker is down'))
+      }
+      const parsed = url.parse(link, true)
       const magnet = url.format({
         protocol: parsed.protocol,
         query: R.omit([ 'tr' ], parsed.query)
