@@ -1,4 +1,4 @@
-FROM node:8.2
+FROM node:8.4
 
 WORKDIR /service
 ENV NODE_ENV production
