@@ -1,6 +1,6 @@
 const R = require('ramda')
 const { users, torrents } = require('./dals')
-const { detectTracker } = require('./utils')
+const { detectTracker, makeLink } = require('./utils')
 const { TRACKERS } = require('./constants')
 
 const MANUAL = `Torrent trackers monitoring bot.
@@ -74,7 +74,7 @@ async function list (bot, data, { offset = 0 } = {}) {
   }
 
   const torrentsList = result.map(torrent =>
-    `• <a href="${torrent.url}">${torrent.title || torrent.url}</a>`).join('\n')
+    `• <a href="${makeLink(torrent)}">${torrent.title || makeLink(torrent)}</a>`).join('\n')
 
   bot.sendMessage(
     user,
@@ -90,7 +90,7 @@ async function list (bot, data, { offset = 0 } = {}) {
  * Send notification to user about updated torrent
  */
 async function notify (bot, user, torrent) {
-  const html = `<a href="${torrent.url}">${torrent.title || torrent.url}</a>`
+  const html = `<a href="${makeLink(torrent)}">${torrent.title || makeLink(torrent)}</a>`
 
   bot.sendMessage(
     user,

@@ -27,4 +27,12 @@ function detectTracker (link) {
   return { tracker, torrent }
 }
 
-module.exports = { detectTracker }
+function makeLink ({ tracker, torrent }) {
+  switch (tracker) {
+    case TRACKERS.RUTRACKER:
+      return `http://rutracker.net/forum/viewtopic.php?t=${torrent}`
+    default: return null
+  }
+}
+
+module.exports = { detectTracker, makeLink }
