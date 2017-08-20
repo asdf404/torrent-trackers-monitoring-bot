@@ -1,7 +1,7 @@
 {
   "name": "torrent-trackers-monitoring-bot",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Torrent trackers monitoring bot",
   "main": "index.js",
   "scripts": {
