@@ -30,7 +30,7 @@ function detectTracker (link) {
 function makeLink ({ tracker, torrent }) {
   switch (tracker) {
     case TRACKERS.RUTRACKER:
-      return `http://rutracker.net/forum/viewtopic.php?t=${torrent}`
+      return `https://rutracker.net/forum/viewtopic.php?t=${torrent}`
     default: return null
   }
 }
